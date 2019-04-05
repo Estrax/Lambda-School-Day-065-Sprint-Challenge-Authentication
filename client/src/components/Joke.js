@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import {
-    CardSingle,
-    Title,
-    cardBorder,
-
+    JokeDiv,
+    JokeCard,
+    JokeCardSide
 } from '../styles';
 
 const Joke = (props) => {
+    const [flip, setFlip] = useState(false);
     return (
         <>
-            <CardSingle className="card" style={cardBorder}>
-                <Title>{props.joke}</Title>
-            </CardSingle>
+            <JokeDiv>
+                <JokeCard flip={flip} onClick={() => setFlip(!flip)}>
+                    <JokeCardSide>Click to flip #{props.id}</JokeCardSide>
+                    <JokeCardSide back>{props.joke}</JokeCardSide>
+                </JokeCard>
+            </JokeDiv>
         </>
     );
 }
