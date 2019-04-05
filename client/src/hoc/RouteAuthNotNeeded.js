@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { history } from '../';
 
-export default function (ComposedComponent) {
+export default (ComposedComponent) => {
     class NotAuthentication extends Component {
         componentWillMount() {
             if (this.props.authenticated) {
