@@ -28,7 +28,9 @@ export function registerUser(credentials){
                     return await Promise.reject(res.data);
                 }
             })
-            .catch(err => console.log(err));
+            .catch(async err => {
+                await dispatch(errorRegistration(err));
+            });
     }
 
 
@@ -69,7 +71,9 @@ export function loginUser(credentials){
                     return await Promise.reject(res.data);
                 }
             })
-            .catch(err => console.log(err));
+            .catch(async err => {
+                await dispatch(errorLogin(err));
+            });
         
     }
 
