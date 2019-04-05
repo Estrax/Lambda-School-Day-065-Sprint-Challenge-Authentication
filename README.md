@@ -29,9 +29,25 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
+
+Sessions are being used to persist user auth information across requests.
+
 2. What does bcrypt do to help us store passwords in a secure manner.
+
+bcrypt hashes the password using the custom hashing algorithm based on blowfish cipher. It generates a 128-bit `salt` based on the `secretKey` (encrypted 64 times via eksblowfish and stretched to the 192-bit value) and target data. Hashing algorithm uses the desired cost, the salt and the password - then it runs the algorithm performing the subkeys derivation from the password, concatenates them all and stretches to the appropriate length.
+
 3. What does bcrypt do to slow down attackers?
+
+It does `key stretching` (that is really slow because of the KDF algorithms runtime complexity and poor parallelism) that slows down all the `rainbow table attacks`, typical `brute-force attacks` and `dictionary attacks`. Because of that time complexity, it makes bcrypt a decent choice only for hashing passwords - it's too slow for any other application.
+
 4. What are the three parts of the JSON Web Token?
+
+- `header`
+- `payload`
+- `signature`
+
+They are all separated by dots (`.`).
+
 
 ## Project Set Up
 
