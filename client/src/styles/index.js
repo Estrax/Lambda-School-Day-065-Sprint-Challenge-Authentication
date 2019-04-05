@@ -47,3 +47,19 @@ export const FormComponent = styled.form`
     width: 18rem;
     margin: 0 auto;
 `;
+
+export const SearchBar = styled.div`
+    width: 24rem;
+    max-width: 24rem;
+    min-width: 8rem;
+    margin: 0 auto;
+`;
+
+export const SearchInput = styled.input`
+    width: 100%;
+    padding: 0 2rem;
+
+    &::placeholder {
+        text-align: center;
+    }
+`;
