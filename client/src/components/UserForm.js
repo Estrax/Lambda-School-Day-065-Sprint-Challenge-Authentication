@@ -53,7 +53,7 @@ class UserForm extends Component {
         return (
             <>
                 <FormComponent onSubmit={this.props.registerForm ? this.registerUser : this.loginUser} className="card">
-                    <Title>
+                    <Title formTitle>
                         {this.props.registerForm && "Register"}
                         {this.props.loginForm && "Log in"}
                     </Title>

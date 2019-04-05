@@ -32,7 +32,8 @@ export const CardSingle = styled.div`
 
 export const Title = styled.h3`
     text-align: center;
-    color: black;
+    color: ${props => props.formTitle ? 'white' : 'black'};
+    background: ${props => props.formTitle ? '#4c8bf5' : 'none'};
     text-decoration: none;
     margin-bottom: 0;
     padding: 10px;
